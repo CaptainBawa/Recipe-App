@@ -1,0 +1,26 @@
+{
+  "name": "rails-blog",
+  "version": "1.0.0",
+  "description": "<!-- HOW TO USE: This is an example of how you may give instructions on setting up your project locally.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "npx stylelint \"**/*.{css,scss}\"",
+    "lint:fix": "npx stylelint \"**/*.{css,scss}\" --fix"
+  },
+  "keywords": [
+    "ruby_on_rails"
+  ],
+  "author": "Mahabub Alam <mahabubx7@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
+  }
+}
