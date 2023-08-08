@@ -35,3 +35,6 @@ node_modules/
 .env
 .env*
 !.env.example
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

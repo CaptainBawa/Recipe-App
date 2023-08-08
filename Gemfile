@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -74,3 +72,11 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'devise', '~> 4.9'
+
+gem 'tailwindcss-rails', '~> 2.0'
+
+gem "rspec-rails", "~> 6.0"
+
+gem "cancancan", "~> 3.5"
