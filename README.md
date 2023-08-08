@@ -95,11 +95,11 @@ rails s
 - Twitter: [@mahabub\_\_7](https://twitter.com/mahabubx7)
 - LinkedIn: [in/mahabubx7](https://www.linkedin.com/in/mahabubx7)
 
-👤 **Abel Tsegaye**
+👤 **Collins Bawa**
 
-- GitHub: [@abeltsew](https://github.com/abeltsew)
-- Twitter: [@abeltsew](https://twitter.com/abeltsew)
-- LinkedIn: [abeltsew](https://linkedin.com/in/abeltsew)
+- GitHub: [@CaptainBawa](https://github.com/CaptainBawa)
+- Twitter: [@BawaCollins](https://twitter.com/BawaCollins)
+- LinkedIn: [captainbawa](https://www.linkedin.com/in/captainbawa/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
