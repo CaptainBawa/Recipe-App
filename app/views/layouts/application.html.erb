@@ -20,7 +20,6 @@
               <li class=" hover:text-blue-400 hover:cursor-pointer"><%= link_to "Home", public_recipies_path %></li>
               <li class=" hover:text-blue-400 hover:cursor-pointer"><%= link_to "My Foods", foods_path %></li>
               <li class=" hover:text-blue-400 hover:cursor-pointer"><%= link_to "My Recipies", recipies_path %></li>
-              <li class=" hover:text-blue-400 hover:cursor-pointer"><%= link_to "Generate Shopping List", shopping_list_path %></li>
               <li class=" hover:text-blue-400 hover:cursor-pointer"><%= button_to "Log out", '/users/sign_out', method: :delete, data: { turbo: false } %> </li>
             </ul>
           <% else %>
