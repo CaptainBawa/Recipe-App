@@ -1,9 +1,27 @@
-<h1>New food</h1>
 
-<%= render "form", food: @food %>
+<% if @food.errors.any? %>
+  <div class="post-errors-box">
+    <p><%= pluralize(@food.errors.count, "error") %> found:</p>
 
-<br>
+    <ul class="food-errors-ul">
+      <% @food.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
 
-<div>
-  <%= link_to "Back to foods", foods_path %>
+
+<%= form_with path: new_food_path, model: @food, method: :post do |form| %>
+<div class="flex flex-col justify-center items-center gap-2 w-full max-w-2xl h-full">
+  <h1 class="text-3xl text-bold pt-6">New Form for Food</h1>
+  <%= form.label :name%>
+  <%= form.text_field :name%>
+  <%= form.label :measurement_unit%>
+  <%= form.text_field :measurement_unit%>
+  <%= form.label :price%>
+  <%= form.text_field :price%>
+  <%= form.label :quantity%>
+  <%= form.number_field :quantity%>
+  <span class="border-2 border-black p-2"><%= form.submit%></span>
 </div>
+<% end %>

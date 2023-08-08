@@ -1,0 +1,33 @@
+<% if @recipe.errors.any? %>
+  <div class="post-errors-box">
+    <p><%= pluralize(@recipe.errors.count, "error") %> found:</p>
+
+    <ul class="recipe-errors-ul">
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+  <%= form_with model: @recipe, url: recipies_path, method: :post do |form| %>
+  <div class="flex flex-col justify-center items-center gap-2 w-full h-full">
+<h1 class="text-3xl text-bold pt-6">New Form for Recipe</h1>
+   <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.label :preparation_time %>
+    <%= form.text_field :preparation_time %>
+
+    <%= form.label :cooking_time %>
+    <%= form.text_field :cooking_time %>
+
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+<div>
+    <%= form.radio_button :public, true %>
+    <%= form.label 'Public' , :public=> 'True' %>
+    <%= form.radio_button :public, false %>
+    <%= form.label 'Private' , :public=> 'False' %>
+</div>
+    <span class="border-2 border-black p-2"> <%= form.submit 'Add Recipe' %></span>
+    <div>
+  <% end %>

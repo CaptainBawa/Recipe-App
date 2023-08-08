@@ -12,10 +12,32 @@
   </head>
 
   <body>
-    <div class="messages">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <div class="header">
+      <nav class="bg-gray-100 py-3">
+        <div class="container">
+          <% if user_signed_in? %>
+            <ul class="flex justify-between items-center border-2 border-black p-6 h-6 text-lg">
+              <li class=" hover:text-blue-400 hover:cursor-pointer"><%= link_to "Home", public_recipies_path %></li>
+              <li class=" hover:text-blue-400 hover:cursor-pointer"><%= link_to "My Foods", foods_path %></li>
+              <li class=" hover:text-blue-400 hover:cursor-pointer"><%= link_to "My Recipies", recipies_path %></li>
+              <li class=" hover:text-blue-400 hover:cursor-pointer"><%= button_to "Log out", '/users/sign_out', method: :delete, data: { turbo: false } %> </li>
+            </ul>
+          <% else %>
+            <ul class="flex justify-end gap-2 pr-6 text-lg">
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Sign in", new_user_session_path %> </li>
+            </ul>
+          <% end %>
+        </div>
+      </nav>
     </div>
-    <%= yield %>
+
+    <div class="container">
+      <div class="messages mt-2">
+        <p class="notice text-green-600 font-semibold"><%= notice %></p>
+        <p class="alert text-blue-600"><%= alert %></p>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

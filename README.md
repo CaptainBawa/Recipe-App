@@ -71,15 +71,23 @@ Clone this repository to your desired folder:
 
 Install this project with:
 
-```
+```sh
 bundle install
 ```
 
 ### Usage
 
+Setup database first,
+
+```sh
+cp .env.example .env
+```
+
+And change your variables according to your database config
+
 To run the project, execute the following command:
 
-```
+```sh
 rails s
 ```
 
