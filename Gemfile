@@ -77,6 +77,6 @@ gem 'devise', '~> 4.9'
 
 gem 'tailwindcss-rails', '~> 2.0'
 
-gem "rspec-rails", "~> 6.0"
+gem 'rspec-rails', '~> 6.0'
 
-gem "cancancan", "~> 3.5"
+gem 'cancancan', '~> 3.5'
