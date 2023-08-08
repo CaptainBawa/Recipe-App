@@ -1,0 +1,25 @@
+<h1 class="text-center text-3xl pt-6">Public Recipies</h1>
+
+<% if @public.length > 0 %>
+<div class="flex flex-col gap-3 justify-center items-center pt-6">
+    <% @public.each do |recipe|%>
+    <div class="flex border-2 border-black w-1/2 justify-between px-6">
+        <div class="flex flex-col">
+            <%= link_to "#{recipe.name}", "/recipies/#{recipe.id}", class: 'text-blue-400 underline hover:pointer-cursor' %>
+            <p>by: <%= recipe.user.name%><p>
+        </div>
+        <div class="flex flex-col">
+            <p>Total food Items: <%= recipe.recipe_foods.length %> </p>
+
+            <% total = 0 %>
+                <% recipe.recipe_foods.each do |food| %>
+                <% total += food.food.price %>
+                <% end %>
+                <p>Total price: $<%= total %> </p>
+        </div>
+    </div>
+    <% end %>
+ </div>
+<% else %>
+    <h1> No Public Recipies</h1>
+<% end %>

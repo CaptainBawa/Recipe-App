@@ -1,0 +1,20 @@
+<div class='flex justify-end p-10'>
+<%= link_to 'Add Recipe', "/recipies/new", class: 'border-2 border-black p-2' %>
+</div>
+<% if @recipies.length > 0 %>
+   <div class="flex flex-col gap-3 justify-center items-center pt-6">
+    <% @recipies.each do |recipe|%>
+    <div class="flex border-2 border-black w-1/2 justify-between px-6">
+        <div class="flex flex-col">
+            <%= link_to "#{recipe.name}", "/recipies/#{recipe.id}", class: 'text-blue-400 underline hover:pointer-cursor' %>
+            <%= button_to "delete","/recipies/#{recipe.id}", method: :delete, class: 'text-red-400 underline hover:pointer-cursor' %>
+        </div>
+        <div class="flex flex-col">
+            <p><%= recipe.description%><p>
+        </div>
+    </div>
+    <% end %>
+ </div>
+<% else %>
+    <h1> No Recipies</h1>
+<% end %>

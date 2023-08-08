@@ -1,14 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Foods</h1>
-
-<div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
-  <% end %>
+<div class='flex justify-end p-10'>
+<%= link_to 'Add Food', '/foods/new', class: 'border-2 border-black p-2' %>
 </div>
 
-<%= link_to "New food", new_food_path %>
+<%= render '/shared/foods', foods: @foods%>

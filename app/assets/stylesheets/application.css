@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+ .container {
+  /* @apply block mx-auto my-0 w-[85%] max-w-[1280px] bg-blue-500; */
+  display: block;
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1280px;
+ }
+
+ .actions {
+  margin: 0.75rem auto;
+ }
+ .actions button[type="submit"],
+ .actions input[type="submit"] {
+  display: inline-flex;
+  background-color: aquamarine;
+  color: #343536;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+ }
+
+ .messages p {
+  text-align: center;
+ }

@@ -1,0 +1,33 @@
+<h1 class="font-bold text-4xl mb-10 text-center">Shopping List</h1>
+<div class="mb-10 text-center">
+  <span class="text-2xl">
+    Amount of food items to buy: <span class="font-bold"><%= @recipe_foods.length %></span>
+  </span>
+  <span class="text-2xl">
+    Total value of food needed: <span class="font-bold">$<%= @recipe_foods.map {|r| r.food.price * (r.quantity - r.food.quantity) }.sum %></span>
+  </span>
+</div>
+<table class="w-full max-w-xl mx-auto text-left mb-10 text-lg">
+  <thead class="bg-gray-400">
+    <tr class="h-10">
+      <th class="p-4">Food</th>
+      <th class="p-4">Quantity</th>
+      <th class="p-4">Price</th>
+      <th class="p-4">Amount</th>
+    </tr>
+  </thead>
+  <tbody class=" p-20">
+    <% @recipe_foods.each_with_index do | recipe,index|%>
+    <% if index.even?  %>
+      <tr class='bg-gray-200 h-16'>
+      <%else%>
+      <tr class='bg-gray-300 h-16'>
+      <%end%>
+        <td class="p-4"><%= recipe.food.name %> (<%= recipe.food.quantity %>)</td>
+        <td class="p-4"><%= recipe.quantity %> <%= recipe.food.measurement_unit %></td>
+        <td class="p-4">$<%= recipe.food.price %></td>
+        <td class="p-4">$<%= recipe.food.price.to_i * (recipe.quantity - recipe.food.quantity) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
