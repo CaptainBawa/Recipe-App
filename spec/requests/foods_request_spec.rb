@@ -4,8 +4,8 @@ describe Food, type: :request do
   describe 'foods route should be available' do
     before(:each) do
       @captain = User.create!(name: 'Captain',
-                           email: 'test@example.com',
-                           password: 'kagawa', password_confirmation: 'kagawa')
+                              email: 'test@example.com',
+                              password: 'kagawa', password_confirmation: 'kagawa')
       @rice = Food.create(name: 'rice', measurement_unit: 'grams', price: 5.99, quantity: 2, user: @captain)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@captain)
