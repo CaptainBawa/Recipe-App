@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def set_default
-    self.name = email.split('@')[0]
+    self.name = name
   end
 
   def admin?
