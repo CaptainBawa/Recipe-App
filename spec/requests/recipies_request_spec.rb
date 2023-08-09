@@ -24,19 +24,18 @@ describe Recipe, type: :request do
     end
 
     it 'should assigns @recipe and @foods' do
-        get recipies_path(id: @recipe.id)
-        expect(response).to be_successful
-        expect(response.body).to include('delete')
-        expect(response.body).to include('testing')
-      end
+      get recipies_path(id: @recipe.id)
+      expect(response).to be_successful
+      expect(response.body).to include('delete')
+      expect(response.body).to include('testing')
+    end
 
-
-      it 'creates a new recipe and redirects to recipes_path on success' do
-        recipe_params = { name: 'New Recipe', preparation_time: 10, cooking_time: 20, description: 'Test description', public: true }
-        post '/recipies', params: { recipe: recipe_params }
-        expect(response).to redirect_to(user_session_path)
-        expect(Recipe.count).to eq(1)
-      end
-      
+    it 'creates a new recipe and redirects to recipes_path on success' do
+      recipe_params = { name: 'New Recipe', preparation_time: 10, cooking_time: 20, description: 'Test description',
+                        public: true }
+      post '/recipies', params: { recipe: recipe_params }
+      expect(response).to redirect_to(user_session_path)
+      expect(Recipe.count).to eq(1)
+    end
   end
 end
