@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do
-  abel = User.create!(name: Faker::Name.unique.name,
+  user = User.create!(name: Faker::Name.unique.name,
                       email: Faker::Internet.email,
                       password: '1234567', password_confirmation: '1234567')
 
@@ -9,13 +9,13 @@ RSpec.describe RecipeFood, type: :model do
                           preparation_time: '1 hr',
                           cooking_time: '2 hr',
                           description: 'Yemmy drumbs',
-                          public: false, user: abel)
+                          public: false, user:)
 
   food = Food.create!(name: 'Chicken',
                       quantity: 2,
                       measurement_unit: 'kg',
                       price: 45,
-                      user: abel)
+                      user:)
   subject do
     RecipeFood.new(recipe_id: recipe.id, food_id: food.id, quantity: 5)
   end
