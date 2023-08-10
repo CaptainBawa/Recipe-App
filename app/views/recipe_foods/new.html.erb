@@ -1,0 +1,15 @@
+<%= form_with url: "/recipies/#{params[:recipy_id]}/recipe_foods", model: @recipe_foods, method: :post do |form| %>
+<div class="flex flex-col justify-center items-center gap-2 w-full h-full">
+<h1 class="text-3xl text-bold pt-6">New Form for Ingridient</h1>
+<div>
+<%= form.label :quantity %>
+<%= form.number_field :quantity %>
+</div>
+<div>
+<%= form.label :food_id%>
+<%= form.select :food_id, Food.all.map {|f| [f.name, f.id]} %>
+</div>
+
+    <span class="border-2 border-black p-2"> <%= form.submit 'Add Ingridient' %></span>
+    <div>
+  <% end %>
