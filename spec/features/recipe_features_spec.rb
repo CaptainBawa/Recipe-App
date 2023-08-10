@@ -26,4 +26,9 @@ RSpec.describe 'recipies page', type: :feature do
     click_link 'Add Recipe'
     expect(page).to have_current_path(user_session_path)
   end
+
+  it 'should show the public recipies' do
+    visit '/public_recipies'
+    expect(page).to have_content('Public')
+  end
 end
